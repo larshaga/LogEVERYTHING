@@ -27,7 +27,12 @@
   </extensions>
 
   <actions>
-    <!-- Add your actions here -->
+    <action class="WrapInLog"
+            id="WrapInLog"
+            text="logTHIS"
+            description="An plugin that wraps code in log statement with a keymap">
+        <add-to-group group-id="ToolsMenu" anchor="last"/>
+    </action>
   </actions>
 
 </idea-plugin>
