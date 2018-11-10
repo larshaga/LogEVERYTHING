@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.logthis</id>
   <name>logTHIS</name>
-  <version>0.1</version>
+  <version>1.0</version>
   <vendor email="LarsKHaga@gmail.com" url="https://github.com/larshaga">https://github.com/larshaga</vendor>
 
   <description><![CDATA[
@@ -9,7 +9,8 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      <p>Version 0.1</p>
+      <p>Version 1.0</p>
+      <p>Basic version of plugin is running</p>
     ]]>
   </change-notes>
 
