@@ -54,5 +54,7 @@ public class WrapInLog extends AnAction
         // TODO: Move the console log statement for the different languages to another place
 
         // TODO: Print out error messages if .getLanguage produces a NullPointerException
+
+        // TODO: Add support for keybard shortcuts
     }
 }
