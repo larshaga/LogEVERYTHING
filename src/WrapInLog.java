@@ -8,6 +8,7 @@ import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.project.Project;
+import org.apache.commons.lang.StringUtils;
 
 public class WrapInLog extends AnAction
 {
@@ -41,11 +42,14 @@ public class WrapInLog extends AnAction
         final String JavaScriptConsoleLogStart = "console.log(";
         final String JavaScriptConsoleLogEnd = ");";
 
+        if (selectedText == null || StringUtils.isEmpty(selectedText)) {
+            return;
+        }
+
+
         WriteCommandAction.runWriteCommandAction(project, () -> document.replaceString(start,end,JavaConsoleLogStart+selectedText+JavaConsoleLogEnd));
 
         // TODO: Add correct console log statement for the different languages
-
-        // TODO: If nothing is selected dont do anything
 
         // TODO: Move the console log statement for the different languages to another place
 
