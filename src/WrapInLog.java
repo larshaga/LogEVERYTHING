@@ -43,6 +43,7 @@ public class WrapInLog extends AnAction
         final String JavaScriptConsoleLogEnd = ");";
 
         if (selectedText == null || StringUtils.isEmpty(selectedText)) {
+            // TODO: Add popup window explaining that noting is selected
             return;
         }
 
