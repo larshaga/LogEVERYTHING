@@ -28,12 +28,14 @@
   </extensions>
 
   <actions>
-    <action class="WrapInLog"
-            id="WrapInLog"
-            text="logTHIS"
-            description="An plugin that wraps code in log statement with a keymap">
-        <add-to-group group-id="ToolsMenu" anchor="last"/>
-    </action>
+    <action
+      class="WrapInLog"
+      id="WrapInLog"
+      text="logTHIS"
+      description="An plugin that wraps code in log statement with a keymap">
+      <keyboard-shortcut first-keystroke="control shift O" keymap="$default"/>
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+    </action>s
   </actions>
 
 </idea-plugin>
