@@ -1,0 +1,14 @@
+{
+  "java": {
+    "start": "System.out.println(",
+    "end": ");"
+  },
+  "javascript": {
+    "start": "Console.log(",
+    "end": ");"
+  },
+  "python": {
+    "start": "print(",
+    "end": ");"
+  }
+}
