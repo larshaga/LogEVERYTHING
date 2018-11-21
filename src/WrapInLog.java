@@ -8,16 +8,15 @@ import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.project.Project;
+
 import org.apache.commons.lang.StringUtils;
 
-public class WrapInLog extends AnAction
-{
+public class WrapInLog extends AnAction {
 
     @Override
-    public void actionPerformed(AnActionEvent anActionEvent)
-    {
+    public void actionPerformed(AnActionEvent anActionEvent) {
         // Gets the programming language
-        Language programmingLanguage = anActionEvent.getData(CommonDataKeys.PSI_FILE).getLanguage();
+        Language programmingLanguage = Objects.requireNonNull(anActionEvent.getData(CommonDataKeys.PSI_FILE)).getLanguage();
         String languageTag = programmingLanguage.getDisplayName().toLowerCase();
 
         // Gets the users selected text
@@ -25,8 +24,8 @@ public class WrapInLog extends AnAction
         CaretModel caretModel = editor.getCaretModel();
         String selectedText = caretModel.getCurrentCaret().getSelectedText();
 
-        // Gets the project and document
-        final Project project = anActionEvent.getProject();
+        // Gets the currentProject and document
+        final Project currentProject = anActionEvent.getProject();
         final Document document = editor.getDocument();
 
         // Gets the start and the end of the user selected text
@@ -42,8 +41,9 @@ public class WrapInLog extends AnAction
         final String JavaScriptConsoleLogStart = "console.log(";
         final String JavaScriptConsoleLogEnd = ");";
 
+        // Returns if selected text is null or empty
         if (selectedText == null || StringUtils.isEmpty(selectedText)) {
-            // TODO: Add popup window explaining that noting is selected
+            // TODO: Add popup window down in the right corner explaining that noting is selected
             return;
         }
 
@@ -55,7 +55,5 @@ public class WrapInLog extends AnAction
         // TODO: Move the console log statement for the different languages to another place
 
         // TODO: Print out error messages if .getLanguage produces a NullPointerException
-
-        // TODO: Add support for keybard shortcuts
     }
 }
